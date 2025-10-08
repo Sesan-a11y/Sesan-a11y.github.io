@@ -1,1 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluciones Digitales Pro - Tu Negocio Online</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navegación */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Secciones */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #667eea;
+        }
+
+        /* Servicios */
+        .servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .servicio {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .servicio:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.3);
+        }
+
+        .servicio-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .servicio h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Sobre Nosotros */
+        .sobre-nosotros {
+            background: #f8f9fa;
+        }
+
+        .sobre-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .sobre-texto p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .sobre-imagen {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 300px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        /* Contacto */
+        .contacto {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contacto h2 {
+            color: white;
+        }
+
+        .contacto-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contacto-item {
+            font-size: 1.2rem;
+        }
+
+        .contacto-item strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .sobre-content {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav>
+        <div class="container">
+            <h1>🚀 Soluciones Pro</h1>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <h2>Transforma Tu Negocio</h2>
+        <p>Soluciones digitales innovadoras para empresas modernas</p>
+        <a href="#contacto" class="btn">Contáctanos Ahora</a>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="servicios">
+            <div class="servicio">
+                <div class="servicio-icon">💻</div>
+                <h3>Desarrollo Web</h3>
+                <p>Creamos sitios web modernos, rápidos y optimizados para tu negocio.</p>
+            </div>
+            <div class="servicio">
+                <div class="servicio-icon">📱</div>
+                <h3>Apps Móviles</h3>
+                <p>Aplicaciones nativas y multiplataforma para iOS y Android.</p>
+            </div>
+            <div class="servicio">
+                <div class="servicio-icon">🎨</div>
+                <h3>Diseño UX/UI</h3>
+                <p>Experiencias de usuario intuitivas y diseños atractivos.</p>
+            </div>
+            <div class="servicio">
+                <div class="servicio-icon">📊</div>
+                <h3>Marketing Digital</h3>
+                <p>Estrategias efectivas para hacer crecer tu presencia online.</p>
+            </div>
+            <div class="servicio">
+                <div class="servicio-icon">☁️</div>
+                <h3>Cloud Computing</h3>
+                <p>Soluciones en la nube escalables y seguras para tu empresa.</p>
+            </div>
+            <div class="servicio">
+                <div class="servicio-icon">🔒</div>
+                <h3>Ciberseguridad</h3>
+                <p>Protege tu negocio con las mejores prácticas de seguridad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section class="sobre-nosotros" id="nosotros">
+        <h2>Sobre Nosotros</h2>
+        <div class="sobre-content">
+            <div class="sobre-texto">
+                <p><strong>Somos un equipo de expertos apasionados</strong> por la tecnología y la innovación.</p>
+                <p>Con más de 10 años de experiencia, hemos ayudado a cientos de empresas a alcanzar sus objetivos digitales.</p>
+                <p>Nuestro enfoque se basa en entender las necesidades únicas de cada cliente y ofrecer soluciones personalizadas que generen resultados reales.</p>
+                <p>Trabajamos con las últimas tecnologías y metodologías ágiles para garantizar la calidad y eficiencia en cada proyecto.</p>
+            </div>
+            <div class="sobre-imagen">
+                🏆
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contacto" id="contacto">
+        <h2>Contáctanos</h2>
+        <p>¿Listo para llevar tu negocio al siguiente nivel?</p>
+        <div class="contacto-info">
+            <div class="contacto-item">
+                <strong>📧 Email</strong>
+                info@solucionespro.com
+            </div>
+            <div class="contacto-item">
+                <strong>📱 Teléfono</strong>
+                +1 (555) 123-4567
+            </div>
+            <div class="contacto-item">
+                <strong>📍 Ubicación</strong>
+                Miami, Florida, USA
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Soluciones Digitales Pro. Todos los derechos reservados.</p>
+        <p>Hecho con ❤️ para tu éxito</p>
+    </footer>
+</body>
+</html>
