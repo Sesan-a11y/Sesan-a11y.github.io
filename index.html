@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soluciones Digitales Pro - Tu Negocio Online</title>
+    <title>Restaurante El Sabor - Comida Deliciosa a Domicilio</title>
     <style>
         * {
             margin: 0;
@@ -19,7 +19,7 @@
 
         /* Navegación */
         nav {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
             padding: 1rem 0;
             position: sticky;
@@ -59,7 +59,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
             padding: 100px 20px;
             text-align: center;
@@ -77,19 +77,20 @@
             opacity: 0.9;
         }
 
-        .btn {
+        .whatsapp-btn {
             display: inline-block;
-            background: white;
-            color: #667eea;
+            background: #25D366;
+            color: white;
             padding: 15px 40px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 1.1rem;
         }
 
-        .btn:hover {
+        .whatsapp-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
@@ -104,39 +105,111 @@
         h2 {
             text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #667eea;
+            margin-bottom: 1rem;
+            color: #f5576c;
         }
 
-        /* Servicios */
-        .servicios {
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Productos Grid */
+        .productos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .servicio {
+        .producto {
             background: white;
-            padding: 2rem;
             border-radius: 15px;
+            overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
         }
 
-        .servicio:hover {
+        .producto:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(102,126,234,0.3);
+            box-shadow: 0 10px 30px rgba(245,87,108,0.3);
         }
 
-        .servicio-icon {
-            font-size: 3rem;
+        .producto-imagen {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .producto-info {
+            padding: 1.5rem;
+        }
+
+        .producto-nombre {
+            font-size: 1.5rem;
+            color: #f5576c;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .producto-descripcion {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .producto-precio {
+            font-size: 1.8rem;
+            color: #25D366;
+            font-weight: bold;
             margin-bottom: 1rem;
         }
 
-        .servicio h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
+        .producto-btn {
+            display: block;
+            background: #25D366;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .producto-btn:hover {
+            background: #20ba5a;
+        }
+
+        /* Categorías */
+        .categorias {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .categoria-btn {
+            padding: 10px 25px;
+            background: white;
+            border: 2px solid #f5576c;
+            color: #f5576c;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .categoria-btn:hover,
+        .categoria-btn.active {
+            background: #f5576c;
+            color: white;
         }
 
         /* Sobre Nosotros */
@@ -157,7 +230,7 @@
         }
 
         .sobre-imagen {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             height: 300px;
             border-radius: 15px;
             display: flex;
@@ -167,15 +240,41 @@
             font-size: 4rem;
         }
 
-        /* Contacto */
-        .contacto {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* Horario */
+        .horario {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
+            padding: 60px 20px;
             text-align: center;
         }
 
-        .contacto h2 {
+        .horario h2 {
             color: white;
+        }
+
+        .horario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 2rem auto 0;
+        }
+
+        .horario-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .horario-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contacto */
+        .contacto {
+            text-align: center;
         }
 
         .contacto-info {
@@ -193,6 +292,7 @@
         .contacto-item strong {
             display: block;
             margin-bottom: 0.5rem;
+            color: #f5576c;
         }
 
         /* Footer */
@@ -201,6 +301,30 @@
             color: white;
             text-align: center;
             padding: 2rem;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
         }
 
         /* Animaciones */
@@ -237,6 +361,10 @@
             h2 {
                 font-size: 2rem;
             }
+
+            .productos {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -244,10 +372,10 @@
     <!-- Navegación -->
     <nav>
         <div class="container">
-            <h1>🚀 Soluciones Pro</h1>
+            <h1>🍽️ El Sabor</h1>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#menu">Menú</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -256,44 +384,179 @@
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <h2>Transforma Tu Negocio</h2>
-        <p>Soluciones digitales innovadoras para empresas modernas</p>
-        <a href="#contacto" class="btn">Contáctanos Ahora</a>
+        <h2>Comida Deliciosa a Domicilio</h2>
+        <p>Los mejores sabores de Cuba directo a tu casa</p>
+        <a href="https://wa.me/5355123456?text=Hola!%20Quiero%20hacer%20un%20pedido" class="whatsapp-btn">
+            💬 Pedir por WhatsApp
+        </a>
     </section>
 
-    <!-- Servicios -->
-    <section id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <div class="servicios">
-            <div class="servicio">
-                <div class="servicio-icon">💻</div>
-                <h3>Desarrollo Web</h3>
-                <p>Creamos sitios web modernos, rápidos y optimizados para tu negocio.</p>
+    <!-- Menú -->
+    <section id="menu">
+        <h2>Nuestro Menú</h2>
+        <p class="subtitle">Haz clic en el producto para ordenar por WhatsApp</p>
+        
+        <div class="categorias">
+            <button class="categoria-btn active">Todos</button>
+            <button class="categoria-btn">Platos Principales</button>
+            <button class="categoria-btn">Pizzas</button>
+            <button class="categoria-btn">Postres</button>
+            <button class="categoria-btn">Bebidas</button>
+        </div>
+
+        <div class="productos">
+            <!-- Producto 1 -->
+            <div class="producto">
+                <div class="producto-imagen">🍗</div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Pollo Asado Completo</div>
+                    <div class="producto-descripcion">
+                        Pollo completo asado con especias cubanas, acompañado de arroz moro, yuca con mojo y ensalada fresca.
+                    </div>
+                    <div class="producto-precio">$8.50</div>
+                    <a href="https://wa.me/5355123456?text=Hola!%20Quiero%20ordenar:%20Pollo%20Asado%20Completo%20-%20$8.50" class="producto-btn">
+                        💬 Ordenar por WhatsApp
+                    </a>
+                </div>
             </div>
-            <div class="servicio">
-                <div class="servicio-icon">📱</div>
-                <h3>Apps Móviles</h3>
-                <p>Aplicaciones nativas y multiplataforma para iOS y Android.</p>
+
+            <!-- Producto 2 -->
+            <div class="producto">
+                <div class="producto-imagen">🍕</div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Pizza Especial</div>
+                    <div class="producto-descripcion">
+                        Pizza grande con jamón, queso, pimientos, cebolla, aceitunas y salsa casera. Masa artesanal crujiente.
+                    </div>
+                    <div class="producto-precio">$6.00</div>
+                    <a href="https://wa.me/5355123456?text=Hola!%20Quiero%20ordenar:%20Pizza%20Especial%20-%20$6.00" class="producto-btn">
+                        💬 Ordenar por WhatsApp
+                    </a>
+                </div>
             </div>
-            <div class="servicio">
-                <div class="servicio-icon">🎨</div>
-                <h3>Diseño UX/UI</h3>
-                <p>Experiencias de usuario intuitivas y diseños atractivos.</p>
+
+            <!-- Producto 3 -->
+            <div class="producto">
+                <div class="producto-imagen">🥩</div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Bistec de Res</div>
+                    <div class="producto-descripcion">
+                        Bistec de res jugoso a la plancha, con arroz blanco, frijoles negros, plátanos maduros y ensalada.
+                    </div>
+                    <div class="producto-precio">$7.00</div>
+                    <a href="https://wa.me/5355123456?text=Hola!%20Quiero%20ordenar:%20Bistec%20de%20Res%20-%20$7.00" class="producto-btn">
+                        💬 Ordenar por WhatsApp
+                    </a>
+                </div>
             </div>
-            <div class="servicio">
-                <div class="servicio-icon">📊</div>
-                <h3>Marketing Digital</h3>
-                <p>Estrategias efectivas para hacer crecer tu presencia online.</p>
+
+            <!-- Producto 4 -->
+            <div class="producto">
+                <div class="producto-imagen">🍝</div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Espaguetis Boloñesa</div>
+                    <div class="producto-descripcion">
+                        Espaguetis con salsa boloñesa casera de carne molida, tomate y especias. Servido con pan de ajo.
+                    </div>
+                    <div class="producto-precio">$5.50</div>
+                    <a href="https://wa.me/5355123456?text=Hola!%20Quiero%20ordenar:%20Espaguetis%20Boloñesa%20-%20$5.50" class="producto-btn">
+                        💬 Ordenar por WhatsApp
+                    </a>
+                </div>
             </div>
-            <div class="servicio">
-                <div class="servicio-icon">☁️</div>
-                <h3>Cloud Computing</h3>
-                <p>Soluciones en la nube escalables y seguras para tu empresa.</p>
+
+            <!-- Producto 5 -->
+            <div class="producto">
+                <div class="producto-imagen">🐟</div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Pescado Frito</div>
+                    <div class="producto-descripcion">
+                        Filete de pescado fresco frito dorado, con tostones, arroz y ensalada de aguacate.
+                    </div>
+                    <div class="producto-precio">$9.00</div>
+                    <a href="https://wa.me/5355123456?text=Hola!%20Quiero%20ordenar:%20Pescado%20Frito%20-%20$9.00" class="producto-btn">
+                        💬 Ordenar por WhatsApp
+                    </a>
+                </div>
             </div>
-            <div class="servicio">
-                <div class="servicio-icon">🔒</div>
-                <h3>Ciberseguridad</h3>
-                <p>Protege tu negocio con las mejores prácticas de seguridad.</p>
+
+            <!-- Producto 6 -->
+            <div class="producto">
+                <div class="producto-imagen">🍔</div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Hamburguesa Cubana</div>
+                    <div class="producto-descripcion">
+                        Hamburguesa de carne de res con queso derretido, jamón, lechuga, tomate y papas fritas crujientes.
+                    </div>
+                    <div class="producto-precio">$4.50</div>
+                    <a href="https://wa.me/5355123456?text=Hola!%20Quiero%20ordenar:%20Hamburguesa%20Cubana%20-%20$4.50" class="producto-btn">
+                        💬 Ordenar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 7 -->
+            <div class="producto">
+                <div class="producto-imagen">🍰</div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Flan de Caramelo</div>
+                    <div class="producto-descripcion">
+                        Flan casero de caramelo suave y cremoso, hecho con receta tradicional cubana.
+                    </div>
+                    <div class="producto-precio">$2.00</div>
+                    <a href="https://wa.me/5355123456?text=Hola!%20Quiero%20ordenar:%20Flan%20de%20Caramelo%20-%20$2.00" class="producto-btn">
+                        💬 Ordenar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 8 -->
+            <div class="producto">
+                <div class="producto-imagen">🍹</div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Jugo Natural</div>
+                    <div class="producto-descripcion">
+                        Jugo natural de frutas frescas: piña, mango, guayaba o tamarindo. Refrescante y sin azúcar añadida.
+                    </div>
+                    <div class="producto-precio">$1.50</div>
+                    <a href="https://wa.me/5355123456?text=Hola!%20Quiero%20ordenar:%20Jugo%20Natural%20-%20$1.50" class="producto-btn">
+                        💬 Ordenar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 9 -->
+            <div class="producto">
+                <div class="producto-imagen">🥤</div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Refresco Frío</div>
+                    <div class="producto-descripcion">
+                        Refresco bien frío de tu marca favorita: Coca Cola, Sprite, Fanta o Pepsi (lata 355ml).
+                    </div>
+                    <div class="producto-precio">$1.00</div>
+                    <a href="https://wa.me/5355123456?text=Hola!%20Quiero%20ordenar:%20Refresco%20Frío%20-%20$1.00" class="producto-btn">
+                        💬 Ordenar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horario -->
+    <section class="horario">
+        <h2>Horario de Atención</h2>
+        <div class="horario-grid">
+            <div class="horario-item">
+                <h3>🕐 Lunes a Viernes</h3>
+                <p>11:00 AM - 10:00 PM</p>
+            </div>
+            <div class="horario-item">
+                <h3>🕐 Sábados y Domingos</h3>
+                <p>12:00 PM - 11:00 PM</p>
+            </div>
+            <div class="horario-item">
+                <h3>🚚 Envío a Domicilio</h3>
+                <p>Gratis en compras +$10</p>
             </div>
         </div>
     </section>
@@ -303,13 +566,13 @@
         <h2>Sobre Nosotros</h2>
         <div class="sobre-content">
             <div class="sobre-texto">
-                <p><strong>Somos un equipo de expertos apasionados</strong> por la tecnología y la innovación.</p>
-                <p>Con más de 10 años de experiencia, hemos ayudado a cientos de empresas a alcanzar sus objetivos digitales.</p>
-                <p>Nuestro enfoque se basa en entender las necesidades únicas de cada cliente y ofrecer soluciones personalizadas que generen resultados reales.</p>
-                <p>Trabajamos con las últimas tecnologías y metodologías ágiles para garantizar la calidad y eficiencia en cada proyecto.</p>
+                <p><strong>Somos una familia apasionada por la buena comida</strong> y el servicio de calidad.</p>
+                <p>Con más de 15 años de experiencia en la gastronomía cubana, preparamos cada plato con ingredientes frescos y recetas tradicionales.</p>
+                <p>Nuestro compromiso es llevarte el auténtico sabor de Cuba directamente a tu hogar, con puntualidad y la mejor atención.</p>
+                <p>¡Cada cliente es parte de nuestra familia!</p>
             </div>
             <div class="sobre-imagen">
-                🏆
+                👨‍🍳
             </div>
         </div>
     </section>
@@ -317,27 +580,37 @@
     <!-- Contacto -->
     <section class="contacto" id="contacto">
         <h2>Contáctanos</h2>
-        <p>¿Listo para llevar tu negocio al siguiente nivel?</p>
+        <p>¿Listo para disfrutar de nuestra comida?</p>
         <div class="contacto-info">
             <div class="contacto-item">
-                <strong>📧 Email</strong>
-                info@solucionespro.com
+                <strong>💬 WhatsApp</strong>
+                +53 5512 3456
             </div>
             <div class="contacto-item">
                 <strong>📱 Teléfono</strong>
-                +1 (555) 123-4567
+                +53 7123 4567
             </div>
             <div class="contacto-item">
                 <strong>📍 Ubicación</strong>
-                Miami, Florida, USA
+                La Habana, Cuba
             </div>
+        </div>
+        <div style="margin-top: 2rem;">
+            <a href="https://wa.me/5355123456?text=Hola!%20Quiero%20hacer%20un%20pedido" class="whatsapp-btn">
+                💬 Hacer Pedido por WhatsApp
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Soluciones Digitales Pro. Todos los derechos reservados.</p>
-        <p>Hecho con ❤️ para tu éxito</p>
+        <p>&copy; 2025 Restaurante El Sabor. Todos los derechos reservados.</p>
+        <p>Hecho con ❤️ y mucho sabor cubano</p>
     </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5355123456?text=Hola!%20Quiero%20hacer%20un%20pedido" class="whatsapp-float" title="Contáctanos por WhatsApp">
+        💬
+    </a>
 </body>
 </html>
